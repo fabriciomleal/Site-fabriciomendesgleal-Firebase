@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport", initial-scale="1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="formulario" id="main-container">
+        <h1>LOGIN</h1>
+        <form action="" id="sistema-login-entrando">
+            <div class="full-box">
+                <label for="email">E-mail</label>
+                <input class="input" type="email" name="email" id="email" placeholder="Insira seu e-mail" data-min-length="3" data-required data-email-validate/>
+            </div>
+            <div class="full-box">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" placeholder="Insira sua senha" data-required/>
+            </div>
+            <div class="full-box">
+                <input class="input" type="button" name="reset" id="btn-reset" value="Esqueci minha senha" onclick=resetar()>
+            </div>
+            <div class="full-box">
+                <input class="input" type="button" name="login" id="btn-login" value="Fazer login" onclick=logar()>
+            </div>
+        </form>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDrzXKC7ZTgNMv5a8jfX_WfmWsCTm53kgQ",
+            authDomain: "fabriciomendesgleal.firebaseapp.com",
+            databaseURL: "https://fabriciomendesgleal-default-rtdb.firebaseio.com",
+            projectId: "fabriciomendesgleal",
+            storageBucket: "fabriciomendesgleal.appspot.com",
+            messagingSenderId: "756196905106",
+            appId: "1:756196905106:web:c32bdc22a2facd7b4f564b"
+     };
+     firebase.initializeApp(firebaseConfig);
+     </script>
+     <script src="js/signin.js"></script>
+</body>
+</html>

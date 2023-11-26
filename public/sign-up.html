@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="formulario" id="main-container">
+        <h1>FAÇA SEU CADASTRO</h1>
+        <form action="" id="sistema-login">
+            <div class="full-box">
+                <label for="email">E-mail</label>
+                <input class="input" type="email" name="email" id="email" placeholder="Insira seu e-mail" data-min-length="3" data-required data-email-validate/>
+            </div>
+            <div class="half-box spacing">
+                <label for="name">Nome</label>
+                <input class="input" type="text" name="name" id="name" placeholder="Insira seu nome" data-max-length="16" data-only-letters/>
+            </div>
+            <div class="half-box">
+                <label for="lastname">Sobrenome</label>
+                <input class="input" type="text" name="lastname" id="lastname" placeholder="Insira seu sobrenome"/>
+            </div>
+            <div class="half-box spacing">
+                <label for="password">Senha</label>
+                <input class="input" type="password" name="password" id="password" placeholder="Insira sua senha" data-required/>
+            </div>
+            <div class="half-box">
+                <label for="passconfirm">Confirme sua senha</label>
+                <input class="input" type="password" name="passconfirm" id="passconfirm" placeholder="Confirme sua senha" data-equal="password" data-required>
+            </div>
+            <div class="full-box">
+                <input class="input" type="checkbox" name="agreement" id="agreement">
+                <label for="agreement" id="agreement-label">Eu li e aceito os <a href="https://github.com/fabriciomgleal">termos de uso</a>.</label>
+            </div>
+            <div class="full-box">
+                <input type="button" name="submit" id="btn-submit" value="Registrar" onclick=cadastrar()>
+            </div>
+        </form>
+    </div>
+    <p class="error-validation template"></p>
+    <script src="js/script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDrzXKC7ZTgNMv5a8jfX_WfmWsCTm53kgQ",
+            authDomain: "fabriciomendesgleal.firebaseapp.com",
+            databaseURL: "https://fabriciomendesgleal-default-rtdb.firebaseio.com",
+            projectId: "fabriciomendesgleal",
+            storageBucket: "fabriciomendesgleal.appspot.com",
+            messagingSenderId: "756196905106",
+            appId: "1:756196905106:web:c32bdc22a2facd7b4f564b"
+     };
+
+     firebase.initializeApp(firebaseConfig);
+     </script>
+</body>
+</html>
