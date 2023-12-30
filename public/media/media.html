@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="../css/media.css" media="screen">
+<head>
+    <title>Calculadora de Média</title>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    
+    <label for="nota_p1">Nota P1:</label>
+    <input type="number" id="nota_p1" placeholder="Insira a nota da P1" min="0" max="10"><br>
+    
+    <label for="nota_p2">Nota P2:</label>
+    <input type="number" id="nota_p2" placeholder="Insira a nota da P2" min="0" max="10"><br>
+    
+    <label for="nota_pr">Nota PR:</label>
+    <input type="number" id="nota_pr" placeholder="Insira a nota da PR" min="0" max="10"><br>
+    
+    <button onclick="calculo_da_media()">Calculo da Media</button>
+    
+    <p id="resultado_da_media"></p>
+    
+    <script>
+        function calculo_da_media() {
+            var nota_p1 = parseFloat(document.getElementById("nota_p1").value);
+            var nota_p2 = parseFloat(document.getElementById("nota_p2").value);
+            var nota_pr = parseFloat(document.getElementById("nota_pr").value);
+            
+            if (nota_p1 > 10 || nota_p2 > 10 || nota_pr > 10) {
+                document.getElementById("resultado_da_media").innerHTML = "Por favor, insira uma nota apenas entre 0 e 10.";
+                return;
+            }
+            
+            var notas = [nota_p1, nota_p2, nota_pr];
+            notas.sort(function(a, b) { return b - a; });
+            
+            var notas = (notas[0] + notas[1]) / 2;
+            
+            document.getElementById("resultado_da_media").innerHTML = "Sua média foi de " + notas.toFixed(2);
+        }
+    </script>
+</body>
+</html>
