@@ -1,25 +1,34 @@
 <!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="../css/media.css" media="screen">
+<html lang="en">
 <head>
-    <title>Calculadora de Média</title>
+    <meta charset="UTF-8">
+    <meta name="viewport", initial-scale="1.0">
+    <title>Calculo da média</title>
+    <link rel="stylesheet" href="../css/media.css">
 </head>
 <body>
-    <h1>Calculadora de Média</h1>
-    
-    <label for="nota_p1">Nota P1:</label>
-    <input type="number" id="nota_p1" placeholder="Insira a nota da P1" min="0" max="10"><br>
-    
-    <label for="nota_p2">Nota P2:</label>
-    <input type="number" id="nota_p2" placeholder="Insira a nota da P2" min="0" max="10"><br>
-    
-    <label for="nota_pr">Nota PR:</label>
-    <input type="number" id="nota_pr" placeholder="Insira a nota da PR" min="0" max="10"><br>
-    
-    <button onclick="calculo_da_media()">Calculo da Media</button>
-    
-    <p id="resultado_da_media"></p>
-    
+    <div class="formulario" id="main-container">
+        <h1>Calculo da média</h1>
+        <form action="" id="sistema-login-entrando">
+            <div class="full-box">
+                <label for="nota_p1">Nota P1:</label>
+                <input type="number" id="nota_p1" placeholder="Insira a nota da P1" min="0" max="10"><br>            
+            </div>
+            <div class="full-box">
+                <label for="nota_p2">Nota P2:</label>
+                <input type="number" id="nota_p2" placeholder="Insira a nota da P2" min="0" max="10"><br>
+            </div>
+            <div class="full-box">
+                <label for="nota_pr">Nota PR:</label>
+                <input type="number" id="nota_pr" placeholder="Insira a nota da PR" min="0" max="10"><br>
+            </div>
+            <div class="full-box">
+                <button onclick="calculo_da_media()">Calculo da Media</button>
+            </div>
+            <div class="full-box">
+                <p id="resultado_da_media"></p>
+            </div>
+        </form>
     <script>
         function calculo_da_media() {
             var nota_p1 = parseFloat(document.getElementById("nota_p1").value);

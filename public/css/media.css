@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap");
 /* GERAL */
 * {
-    margin: 10;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Nunito",Helvetica, sans-serif;
@@ -9,16 +9,10 @@
     border: none;
 }
 
-input {
-    text-align: center;
-    display: justify;
-    width: 75%;
-}
-
-label {
+input, label {
     text-align: center;
     display: block;
-    width: 75%;
+    width: 100%;
 }
 
 input:focus, label:focus {
@@ -34,6 +28,21 @@ body {
     background-color:	#201b2c;
 }
 
+.formulario {
+    box-shadow: 0 18px 200px -60px black;
+    border-radius: 50px;
+    width: 650px;
+    position: right;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2509803922);
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* FORM */
 
@@ -44,14 +53,14 @@ body {
 }
 
 form {
-    display: center;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .full-box {
     flex: 1 1 100%;
-    position: center;
+    position: relative;
 }
 
 .half-box {
@@ -64,7 +73,7 @@ form {
 }
 
 label {
-    position: center;
+    position: relative;
     font-weight: bold;
     font-size: .8rem;
 }
@@ -75,11 +84,29 @@ input {
     border-radius: 50px;
     border-bottom: 2px solid #323232;
     font-size: .9rem;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
 }
 
 input:focus {
     border-color: #00ff88;
+}
+
+input[type="submit"] {
+    background-color: #00ff88;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+input[type="button"] {
+    background-color: #00ff88;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
 }
 
 button {
@@ -89,4 +116,26 @@ button {
     border-radius: 20px;
     height: 40px;
     cursor: pointer;
+    margin: 0%;
+}
+
+#agreement {
+    margin-top: 5px;
+}
+
+#agreement, #agreement-label {
+    display: inline-block;
+    width: auto;
+}
+
+/* validacoes */
+.error-validation {
+    color: #FF1A1A;
+    position: absolute;
+    top: 57px;
+    font-size: .8rem;
+}
+
+.template {
+    display: none;
 }
