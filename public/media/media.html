@@ -9,7 +9,7 @@
 <body>
     <div class="formulario" id="main-container">
         <h1>Calculo da média</h1>
-        <form action="" id="sistema-login-entrando">
+        <form action="" id="calculando-media">
             <div class="full-box">
                 <label for="nota_p1">Nota P1:</label>
                 <input type="number" id="nota_p1" placeholder="Insira a nota da P1" min="0" max="10"><br>            
@@ -30,6 +30,12 @@
             </div>
         </form>
     <script>
+        document.getElementById("calculando-media").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            calculo_da_media();
+        });
+        
         function calculo_da_media() {
             var nota_p1 = parseFloat(document.getElementById("nota_p1").value);
             var nota_p2 = parseFloat(document.getElementById("nota_p2").value);
@@ -43,9 +49,9 @@
             var notas = [nota_p1, nota_p2, nota_pr];
             notas.sort(function(a, b) { return b - a; });
             
-            var notas = (notas[0] + notas[1]) / 2;
+            var media = (notas[0] + notas[1]) / 2;
             
-            document.getElementById("resultado_da_media").innerHTML = "Sua média foi de " + notas.toFixed(2);
+            document.getElementById("resultado_da_media").innerHTML = "Sua média foi de " + media.toFixed(2);
         }
     </script>
 </body>
